@@ -1,2 +1,19 @@
 // Import page-specific CSS files here.
 @import "home";
+
+.banner-hp {
+  background-size: cover;
+  background-image: url("https://imgs.search.brave.com/K9c8JT4RvBEMiOIn9HDQagJC151zYikgPz_eOE8mhVQ/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMudW5zcGxhc2gu/Y29tL3Bob3RvLTE1/MzY0NDAxMzY2Mjgt/ODQ5YzE3N2U3NmEx/P2l4bGliPXJiLTQu/MC4zJml4aWQ9TTN3/eE1qQTNmREI4TUh4/elpXRnlZMmg4Tkh4/OFkybHVaVzFoZkdW/dWZEQjhmREI4Zkh3/dyZ3PTEwMDAmcT04/MA.jpeg");
+  background-position: center;
+  // background: linear-gradient(black, white);
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.list-card {
+  width: 150px;
+  height: 80vh;
+  background-image: url("https://imgs.search.brave.com/ox4m66TAaZMNFSXcrCOdG2V19U0EH-MNJPt7Q5fu1z0/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvNTc2/MDgxMTgxL3Bob3Rv/L2NhdGNoLXRoZS1z/dGFyLmpwZz9zPTYx/Mng2MTImdz0wJms9/MjAmYz1YRVhUbHlL/VG03U3NiYXNscEx6/RjJxMWROdTh0VFAw/Q0ZKSWJVMEtlTUFv/PQ");
+}

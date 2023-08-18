@@ -18,12 +18,11 @@ class BookmarksController < ApplicationController
   end
 
   def destroy
-    # @list = List.find(params[:list_id])
-      if @bookmark.destroy
-        redirect_to lists_path, status: :see_other
-      else
-        puts 'destruction failed'
-      end
+    if @bookmark.destroy
+      redirect_to lists_path, status: :see_other
+    else
+      puts 'destruction failed'
+    end
   end
 
   private

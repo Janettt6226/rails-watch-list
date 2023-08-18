@@ -1,21 +1,24 @@
-<div class="container">
-<h1 class="text-center"><%= @list.name %></h1>
+<%= render 'navbar', list: @list %>
 
+<div class="container justify-content-center">
+  <h1 class="text-center"><%= @list.name %></h1>
+  <%# <%= console %>
 
-<%= console %>
+  <button class="btn btn-outline-info mb-5"><%= link_to "📍 Add a bookmark", new_list_bookmark_path(@list) %></button>
 
-  <div class="card">
+  <div class="card-group">
     <% @list.bookmarks.each do |bookmark| %>
-      <ul><h2><%= bookmark.movie.title %></h2></ul>
-      <ul><%= bookmark.movie.poster_url %></ul>
-      <ul><%= bookmark.movie.overview %></ul>
-      <ul><h3><%= bookmark.movie.rating %> /10</h3></ul>
-      <p><%= bookmark.comment %></p>
-
-      <button class="btn btn-success"><%= link_to "Add a bookmark", new_list_bookmark_path(@list) %></button>
-      <button class="btn btn-success"><%= link_to "Delete this bookmark", bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?" } %></button>
+      <div class="card" style="width: 24rem">
+        <img class="card-img-top"><%= image_tag bookmark.movie.poster_url %>
+        <div class="card-body">
+          <h2 class="card-title"><%= bookmark.movie.title %></h2>
+          <h5 class="card-subtitle mb-2 text-muted"><%= bookmark.movie.rating %> /10</h5>
+          <p class="card-text"><%= bookmark.movie.overview %></p>
+          <p>Comment: <%= bookmark.comment %></p>
+          <button class="btn btn-warning"><%= link_to "Delete this bookmark", bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?" } %></button>
+        </div>
+        </div>
     <% end %>
   </div>
+  <%= link_to 'Back to all lists', lists_path %>
 </div>
-
-<%= link_to 'Back to all lists', lists_path %>
